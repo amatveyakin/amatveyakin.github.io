@@ -2,7 +2,7 @@
 <head>
 <script type="text/javascript">
     function showAndroidToast(toast) {
-        document.getElementById('element').innerHTML = "hello from " + currentdate.seconds();
+        document.getElementById('element').innerHTML = "hello from " + (new Date()).seconds();
         Android.showToast(toast);
     }
 </script>
