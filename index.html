@@ -20,10 +20,10 @@
         Android.storeData(currentHealth);
         document.getElementById("hp").innerHTML = Android.loadData();
         if (currentHealth <= 10) {
-            Android.showNotification("You're almost dead.", "Click faster!", false);
+            Android.showNotification(13, "You're almost dead.", "Click faster!", false);
         }
         if (currentHealth <= 0) {
-            Android.showNotification("You're dead.", "Bad luck.", true);
+            Android.showNotification(666, "You're dead.", "Bad luck.", true);
         }
         Android.executeDelayed('onTimerTick()', 1000);
     }
