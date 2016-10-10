@@ -19,6 +19,9 @@
         var currentHealth = Android.loadData() - 1;
         Android.storeData(currentHealth);
         document.getElementById("hp").innerHTML = Android.loadData();
+        if (currentHealth <= 10) {
+            Android.showNotification("You're almost dead.", "Click faster!", false);
+        }
         if (currentHealth <= 0) {
             Android.showNotification("You're dead.", "Bad luck.", true);
         }
