@@ -20,7 +20,6 @@
         Android.storeData(currentHealth);
         document.getElementById("hp").innerHTML = Android.loadData();
         if (currentHealth <= 0) {
-            Android.storeData(-1000);
             Android.showNotification("You're dead.", "Bad luck.", true);
         }
         Android.executeDelayed('onTimerTick()', 1000);
