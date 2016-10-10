@@ -1,15 +1,27 @@
 <html>
 <head>
 <script type="text/javascript">
-    function showAndroidToast(toast) {
-        document.getElementById('element').innerHTML = "hello from " + (new Date()).getSeconds();
-        Android.showToast(toast);
+    function onEatBluePill() {
+        Android.showToast('Congrats, you now feel better. Maybe.');
+        Android.storeData(Android.loadData() + 10);
+    }
+    
+    function onStartGame() {
+        Android.storeData(30);
+        Android.executeAt('onTimerTick()', 1000);
+    }
+    
+    function onTimerTick() {
+        Android.storeData(Android.loadData() - 1);
+        document.getElementById("hp").innerHTML = Android.loadData();
+        Android.executeAt('onTimerTick()', 1000);
     }
 </script>
 </head>
 <body>
-Hello, player!
-<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
-<div id="element"></div>
+Hello, player! Try not to die.
+    <input type="button" value="I WANT TO PLAY A GAME" onClick="onStartGame()" />
+    <input type="button" value="Eat blue pill" onClick="onEatBluePill()" />
+<div id="hp"></div>
 </body>
 </html>
