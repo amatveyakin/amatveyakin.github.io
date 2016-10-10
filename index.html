@@ -1,15 +1,15 @@
 <html>
 <head>
-</head>
-<body>
-Hello, player!
-<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
 <script type="text/javascript">
     function showAndroidToast(toast) {
         Android.showToast(toast);
         document.getElementById('element').innerHTML = toast;
     }
 </script>
-    <div id="element"></div>
+</head>
+<body>
+Hello, player!
+<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+<div id="element"></div>
 </body>
 </html>
