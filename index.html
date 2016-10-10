@@ -16,8 +16,12 @@
     }
     
     function onTimerTick() {
-        Android.storeData(Android.loadData() - 1);
+        var currentHealth = Android.loadData() - 1;
+        Android.storeData(currentHealth);
         document.getElementById("hp").innerHTML = Android.loadData();
+        if (currentHealth <= 0) {
+            Android.showNotification("You're dead.", "Bad luck.", true);
+        }
         Android.executeDelayed('onTimerTick()', 1000);
     }
 </script>
@@ -26,6 +30,6 @@
     Hello, player! Try not to die.
     <input type="button" value="I WANT TO PLAY A GAME" onClick="newGame()" />
     <input type="button" value="Eat blue pill" onClick="onEatBluePill()" />
-<div id="hp"></div>
+    <div id="hp"></div>
 </body>
 </html>
