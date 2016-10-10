@@ -8,13 +8,13 @@
     
     function onStartGame() {
         Android.storeData(30);
-        Android.executeAt('onTimerTick()', 1000);
+        Android.executeDelayed('onTimerTick()', 1000);
     }
     
     function onTimerTick() {
         Android.storeData(Android.loadData() - 1);
         document.getElementById("hp").innerHTML = Android.loadData();
-        Android.executeAt('onTimerTick()', 1000);
+        Android.executeDelayed('onTimerTick()', 1000);
     }
 </script>
 </head>
