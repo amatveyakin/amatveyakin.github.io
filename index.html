@@ -7,8 +7,9 @@ Hello, player!
 <script type="text/javascript">
     function showAndroidToast(toast) {
         Android.showToast(toast);
-        print(toast);
+        document.getElementById('element').innerHTML = toast;
     }
 </script>
+    <div id="element"></div>
 </body>
 </html>
