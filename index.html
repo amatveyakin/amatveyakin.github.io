@@ -6,8 +6,12 @@
         Android.storeData(Android.loadData() + 10);
     }
     
-    function onStartGame() {
+    function newGame() {
         Android.storeData(30);
+        startGame();
+    }
+    
+    function startGame() {
         Android.executeDelayed('onTimerTick()', 1000);
     }
     
@@ -18,9 +22,9 @@
     }
 </script>
 </head>
-<body>
-Hello, player! Try not to die.
-    <input type="button" value="I WANT TO PLAY A GAME" onClick="onStartGame()" />
+<body onload="startGame();">
+    Hello, player! Try not to die.
+    <input type="button" value="I WANT TO PLAY A GAME" onClick="newGame()" />
     <input type="button" value="Eat blue pill" onClick="onEatBluePill()" />
 <div id="hp"></div>
 </body>
